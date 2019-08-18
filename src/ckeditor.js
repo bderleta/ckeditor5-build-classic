@@ -16,7 +16,7 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
-//import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
+// import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
@@ -27,11 +27,11 @@ import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
-//import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
+// import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
-//import Table from '@ckeditor/ckeditor5-table/src/table';
-//import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+// import Table from '@ckeditor/ckeditor5-table/src/table';
+// import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Font from '@ckeditor/ckeditor5-font/src/font';
@@ -50,7 +50,7 @@ ClassicEditor.builtinPlugins = [
 	Code,
 	Subscript,
 	Superscript,
-//	BlockQuote,
+	// BlockQuote,
 	CKFinder,
 	EasyImage,
 	Heading,
@@ -61,49 +61,37 @@ ClassicEditor.builtinPlugins = [
 	ImageUpload,
 	Link,
 	List,
-//	MediaEmbed,
+	// MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
-//	Table,
-//	TableToolbar
+	// Table,
+	// TableToolbar
 	Alignment,
 	Font
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
-	toolbar: {
-		items: [
-			'heading',
-			'|',
-			'bold',
-			'italic',
-			'link',
-			'bulletedList',
-			'numberedList',
-			'imageUpload',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
-			'undo',
-			'redo'
+	alignment: {
+        	options: [ 'left', 'center', 'right' ]
+	},
+        fontSize: {
+        	options: [
+			9,
+			11,
+			13,
+			'default',
+			17,
+			19,
+			21
 		]
 	},
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
-		]
+	link: {
+		addTargetToExternalLinks: true
 	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
-	},
+	toolbar: [
+		'heading', '|', 'fontSize', 'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'link', 'bulletedList', 'numberedList', 'alignment',  'undo', 'redo'
+	],
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };
