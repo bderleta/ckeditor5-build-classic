@@ -7,7 +7,7 @@
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
-import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
@@ -16,8 +16,6 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
@@ -36,7 +34,6 @@ export default class ClassicEditor extends ClassicEditorBase {}
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
 	Essentials,
-	UploadAdapter,
 	Autoformat,
 	Bold,
 	Italic,
@@ -45,14 +42,13 @@ ClassicEditor.builtinPlugins = [
 	Code,
 	Subscript,
 	Superscript,
-	CKFinder,
-	EasyImage,
 	Heading,
 	Image,
 	ImageCaption,
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
+	Base64UploadAdapter,
 	Link,
 	List,
 	Paragraph,
@@ -86,8 +82,9 @@ ClassicEditor.defaultConfig = {
 		addTargetToExternalLinks: true
 	},
 	toolbar: [
-		'heading', '|', 'fontSize', 'bold', 'italic', 'underline', 'strikethrough', 'code', 'subscript', 'superscript', 'link',
-		'bulletedList', 'numberedList', 'image', 'alignment', 'undo', 'redo'
+		'heading', '|', 'fontSize', 'fontColor', 'fontBackgroundColor', 'bold', 'italic',
+		'underline', 'strikethrough', 'code', 'subscript', 'superscript', 'link',
+		'bulletedList', 'numberedList', 'imageUpload', 'alignment', 'undo', 'redo'
 	],
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
