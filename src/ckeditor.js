@@ -86,12 +86,17 @@ ClassicEditor.defaultConfig = {
 			21
 		]
 	},
+	image: {
+		toolbar: [
+			'imageStyle:full', 'imageStyle:side', '|', 'imageTextAlternative'
+		]
+	},
 	link: {
 		addTargetToExternalLinks: true
 	},
 	toolbar: [
-		'heading', '|', 'fontSize', 'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'link',
-		'bulletedList', 'numberedList', 'alignment', 'undo', 'redo'
+		'heading', '|', 'fontSize', 'bold', 'italic', 'underline', 'strikethrough', 'code', 'subscript', 'superscript', 'link',
+		'bulletedList', 'numberedList', 'image', 'alignment', 'undo', 'redo'
 	],
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
